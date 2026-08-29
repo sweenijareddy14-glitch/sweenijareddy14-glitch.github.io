@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sweenija Reddy — Portfolio</title>
 
     <style>
-        /* =========================================================
-           RESET
-        ========================================================= */
 
         * {
             margin: 0;
@@ -36,10 +34,6 @@
             font: inherit;
         }
 
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
-
         :root {
             --paper: #f3f0e8;
             --ink: #171717;
@@ -49,10 +43,6 @@
             --muted: #696760;
             --line: #c8c3b8;
         }
-
-        /* =========================================================
-           SIDE NAVIGATION
-        ========================================================= */
 
         .side-nav {
             position: fixed;
@@ -109,10 +99,6 @@
             color: var(--muted);
         }
 
-        /* =========================================================
-           MAIN
-        ========================================================= */
-
         main {
             margin-left: 72px;
         }
@@ -122,10 +108,6 @@
             padding: 100px 7vw;
             position: relative;
         }
-
-        /* =========================================================
-           HERO
-        ========================================================= */
 
         .hero {
             min-height: 100vh;
@@ -219,10 +201,6 @@
             }
         }
 
-        /* =========================================================
-           MARQUEE
-        ========================================================= */
-
         .marquee {
             overflow: hidden;
             background: var(--ink);
@@ -259,10 +237,6 @@
             }
         }
 
-        /* =========================================================
-           ABOUT
-        ========================================================= */
-
         .about {
             background: var(--paper);
         }
@@ -280,12 +254,12 @@
         .about-layout {
             display: grid;
             grid-template-columns: .35fr 1fr;
-            gap: 70px;
+            gap: 60px;
             padding-top: 80px;
         }
 
         .section-label {
-            font-size: .65rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--orange);
@@ -325,10 +299,6 @@
             max-width: 500px;
         }
 
-        /* =========================================================
-           CURRENTLY PANEL
-        ========================================================= */
-
         .currently {
             margin-top: 80px;
             border-top: 1px solid var(--ink);
@@ -362,10 +332,6 @@
             max-width: 230px;
             line-height: 1.7;
         }
-
-        /* =========================================================
-           TOOLBOX
-        ========================================================= */
 
         .toolbox {
             background: var(--ink);
@@ -447,10 +413,6 @@
             color: #aaa;
         }
 
-        /* =========================================================
-           PROJECTS
-        ========================================================= */
-
         .work {
             background: #e9e5dc;
         }
@@ -468,6 +430,7 @@
             font-size: clamp(4rem, 9vw, 9rem);
             line-height: .8;
             font-weight: 400;
+            
         }
 
         .work-intro {
@@ -636,9 +599,69 @@
             border-color: var(--orange);
         }
 
+
         /* =========================================================
-           CERTIFICATIONS
+           RESUME
         ========================================================= */
+
+        .resume-section {
+            background: var(--paper);
+            min-height: 45vh;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .resume-layout {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 80px;
+            padding-top: 40px;
+            align-items: center;
+        }
+
+        .resume-title {
+            font-family: Georgia, serif;
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 400;
+            line-height: .95;
+        }
+
+        .resume-title span {
+            color: var(--orange);
+        }
+
+        .resume-content {
+            max-width: 520px;
+        }
+
+        .resume-content p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .resume-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            background: var(--ink);
+            color: var(--paper);
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            border: 1px solid var(--ink);
+            transition: .3s;
+        }
+
+        .resume-button:hover {
+            background: var(--orange);
+            color: var(--ink);
+            border-color: var(--orange);
+            transform: translateY(-3px);
+        }
 
         .credentials {
             background: var(--paper);
@@ -706,10 +729,6 @@
             font-size: .65rem;
         }
 
-        /* =========================================================
-           JOURNEY
-        ========================================================= */
-
         .journey {
             background: var(--blue);
             color: white;
@@ -762,10 +781,6 @@
             font-size: .75rem;
             line-height: 1.7;
         }
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
 
         .contact {
             background: var(--orange);
@@ -825,10 +840,6 @@
             padding-bottom: 5px;
         }
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
         footer {
             margin-left: 72px;
             padding: 20px 7vw;
@@ -840,10 +851,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        /* =========================================================
-           SCROLL REVEAL
-        ========================================================= */
 
         .reveal {
             opacity: 0;
@@ -857,10 +864,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* =========================================================
-           RESPONSIVE — TABLET
-        ========================================================= */
 
         @media (max-width: 900px) {
 
@@ -893,6 +896,7 @@
             .about-layout,
             .toolbox-grid,
             .credentials-layout,
+            .resume-layout,
             .journey-grid {
                 grid-template-columns: 1fr;
             }
@@ -928,14 +932,11 @@
             }
 
             .credentials-layout,
+            .resume-layout,
             .journey-grid {
                 gap: 40px;
             }
         }
-
-        /* =========================================================
-           RESPONSIVE — MOBILE
-        ========================================================= */
 
         @media (max-width: 600px) {
 
@@ -1014,6 +1015,7 @@
             .about-heading,
             .toolbox-title,
             .credentials-title,
+            .resume-title,
             .journey-title {
                 font-size: 3.2rem;
             }
@@ -1080,14 +1082,11 @@
                 gap: 8px;
             }
         }
+
     </style>
 </head>
 
 <body>
-
-    <!-- =====================================================
-         SIDE NAVIGATION
-    ===================================================== -->
 
     <aside class="side-nav">
 
@@ -1107,6 +1106,10 @@
 
             <a href="#work">
                 Work
+            </a>
+
+            <a href="#resume">
+                Resume
             </a>
 
             <a href="#credentials">
@@ -1130,10 +1133,6 @@
     </aside>
 
     <main>
-
-        <!-- =====================================================
-             HERO
-        ===================================================== -->
 
         <section class="hero" id="home">
 
@@ -1199,10 +1198,6 @@
 
         </section>
 
-        <!-- =====================================================
-             MARQUEE
-        ===================================================== -->
-
         <div class="marquee">
 
             <div class="marquee-track">
@@ -1251,10 +1246,6 @@
 
         </div>
 
-        <!-- =====================================================
-             ABOUT
-        ===================================================== -->
-
         <section class="about" id="about">
 
             <div class="section-number">
@@ -1284,17 +1275,21 @@
                     <div class="about-copy reveal">
 
                         <p>
+
                             I'm a Computer Science & Data Science student
                             interested in software, data, problem solving
                             and figuring out how things work underneath
                             the surface.
+
                         </p>
 
                         <p>
+
                             I don't want my portfolio to just be a list
                             of technologies. I'd rather show what I made,
                             what I learned from it, and what I'm trying
                             to understand next.
+
                         </p>
 
                         <p class="small">
@@ -1338,10 +1333,6 @@
 
         </section>
 
-        <!-- =====================================================
-             TOOLBOX
-        ===================================================== -->
-
         <section class="toolbox" id="toolbox">
 
             <div class="section-number">
@@ -1381,9 +1372,11 @@
                         </h3>
 
                         <p>
+
                             Writing logic, solving problems and
                             understanding what the computer is
                             actually doing.
+
                         </p>
 
                         <div class="tool-tags">
@@ -1407,8 +1400,10 @@
                         </h3>
 
                         <p>
+
                             Learning how data can be organized,
                             accessed and manipulated efficiently.
+
                         </p>
 
                         <div class="tool-tags">
@@ -1434,9 +1429,11 @@
                         </h3>
 
                         <p>
+
                             Creating interfaces and applications
                             that turn functionality into something
                             people can actually interact with.
+
                         </p>
 
                         <div class="tool-tags">
@@ -1461,8 +1458,10 @@
                         </h3>
 
                         <p>
+
                             Tools that help me build, experiment,
                             organize and automate.
+
                         </p>
 
                         <div class="tool-tags">
@@ -1481,10 +1480,6 @@
             </div>
 
         </section>
-
-        <!-- =====================================================
-             PROJECTS
-        ===================================================== -->
 
         <section class="work" id="work">
 
@@ -1515,8 +1510,6 @@
 
             </div>
 
-            <!-- PROJECT 01 -->
-
             <article class="project reveal">
 
                 <div class="project-visual">
@@ -1538,17 +1531,27 @@
                     </span>
 
                     <h3>
+
                         Cedar Nest<br>
                         Hill Lodge
+
                     </h3>
 
                     <p>
+
                         A responsive multi-page hotel website with accommodation
                         details, gallery, booking enquiry form, interactive
                         navigation and responsive layouts.
+
                         <br><br>
-                        <strong>What it solves:</strong> Gives visitors a clear,
+
+                        <strong>
+                            What it solves:
+                        </strong>
+
+                        Gives visitors a clear,
                         accessible way to explore the property and submit booking enquiries.
+
                     </p>
 
                     <div class="project-meta">
@@ -1585,9 +1588,7 @@
 
             </article>
 
-            <!-- PROJECT 02 -->
-
-            <article class="project reverse reveal">
+        <article class="project reverse reveal">
 
                 <div class="project-visual">
 
@@ -1608,17 +1609,27 @@
                     </span>
 
                     <h3>
+
                         Appointment<br>
                         Management
+
                     </h3>
 
                     <p>
+
                         A terminal-based C application for adding, viewing,
                         searching and deleting hospital appointments, with
                         persistent binary-file storage.
+
                         <br><br>
-                        <strong>What it solves:</strong> Organizes appointment
+
+                        <strong>
+                            What it solves:
+                        </strong>
+
+                        Organizes appointment
                         records so they can be stored, searched and managed efficiently.
+
                     </p>
 
                     <div class="project-meta">
@@ -1642,8 +1653,6 @@
 
             </article>
 
-            <!-- PROJECT 03 -->
-
             <article class="project reveal">
 
                 <div class="project-visual">
@@ -1665,18 +1674,28 @@
                     </span>
 
                     <h3>
+
                         Corporate Org<br>
                         Chart Tool
+
                     </h3>
 
                     <p>
+
                         A collaborative C project that models employee
                         hierarchies using a binary tree, with operations
                         for adding, searching, updating, displaying and
                         deleting employee records.
+
                         <br><br>
-                        <strong>What it solves:</strong> Represents a corporate
+
+                        <strong>
+                            What it solves:
+                        </strong>
+
+                        Represents a corporate
                         reporting structure in a structured, searchable hierarchy.
+
                     </p>
 
                     <div class="project-meta">
@@ -1703,14 +1722,61 @@
 
         </section>
 
-        <!-- =====================================================
-             CREDENTIALS
-        ===================================================== -->
+        <section class="resume-section" id="resume">
+
+            <div class="section-number">
+                03
+            </div>
+
+            <div class="resume-layout">
+
+                <div>
+
+                    <span class="section-label">
+                        My resume
+                    </span>
+
+                    <h2 class="resume-title">
+
+                        The full<br>
+
+                        <span>
+                            picture.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <div class="resume-content reveal">
+
+                    <p>
+
+                        A concise overview of my education,
+                        technical skills, projects and certifications.
+
+                    </p>
+
+                    <a
+                        href="https://sweenijareddy14-glitch.github.io/Sweenija%20Reddy%20Gundra_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="resume-button">
+
+                        Open resume ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
 
         <section class="credentials" id="credentials">
 
             <div class="section-number">
-                03
+                04
             </div>
 
             <div class="credentials-layout">
@@ -1744,7 +1810,6 @@
                         <div>
 
                             <h3>
-
                                 <a
                                     href="https://www.hackerrank.com/certificates/4551da960c46"
                                     target="_blank">
@@ -1752,7 +1817,6 @@
                                     Problem Solving — Basic ↗
 
                                 </a>
-
                             </h3>
 
                             <p>
@@ -1776,7 +1840,6 @@
                         <div>
 
                             <h3>
-
                                 <a
                                     href="https://www.hackerrank.com/certificates/40b7b31b4435"
                                     target="_blank">
@@ -1784,7 +1847,6 @@
                                     Problem Solving — Intermediate ↗
 
                                 </a>
-
                             </h3>
 
                             <p>
@@ -1829,10 +1891,6 @@
 
         </section>
 
-        <!-- =====================================================
-             JOURNEY
-        ===================================================== -->
-
         <section class="journey" id="journey">
 
             <div class="journey-grid">
@@ -1867,9 +1925,11 @@
                             </h3>
 
                             <p>
+
                                 Began studying Computer Science &
                                 Data Science and building foundations
                                 in programming and problem solving.
+
                             </p>
 
                         </div>
@@ -1889,8 +1949,10 @@
                             </h3>
 
                             <p>
+
                                 Worked with C, Python, data structures,
                                 algorithms, databases and web technologies.
+
                             </p>
 
                         </div>
@@ -1910,9 +1972,11 @@
                             </h3>
 
                             <p>
+
                                 Creating projects, practicing problems
                                 and exploring different areas of software
                                 and technology.
+
                             </p>
 
                         </div>
@@ -1932,9 +1996,11 @@
                             </h3>
 
                             <p>
+
                                 Keep learning, keep experimenting and
                                 build projects that become more ambitious
                                 with every iteration.
+
                             </p>
 
                         </div>
@@ -1946,10 +2012,6 @@
             </div>
 
         </section>
-
-        <!-- =====================================================
-             CONTACT
-        ===================================================== -->
 
         <section class="contact" id="contact">
 
@@ -1981,7 +2043,7 @@
                     href="mailto:sweenijareddy14@gmail.com"
                     class="contact-email">
 
-                    sweenijareddy14@gmail.com
+                    your.email@example.com
 
                 </a>
 
@@ -2017,10 +2079,6 @@
 
     </main>
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
-
     <footer>
 
         <span>
@@ -2037,15 +2095,7 @@
 
     </footer>
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
-
     <script>
-
-        /* =====================================================
-           SCROLL REVEAL
-        ===================================================== */
 
         const revealElements =
             document.querySelectorAll(".reveal");
@@ -2084,11 +2134,6 @@
             revealObserver.observe(element);
 
         });
-
-
-        /* =====================================================
-           ACTIVE NAVIGATION
-        ===================================================== */
 
         const sections =
             document.querySelectorAll("section[id]");
