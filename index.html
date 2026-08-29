@@ -601,22 +601,146 @@
 
 
         /* =========================================================
-           RESUME
+           RESUME + PROOF OF WORK
         ========================================================= */
 
         .resume-section {
             background: var(--paper);
-            min-height: 45vh;
-            padding-top: 70px;
-            padding-bottom: 70px;
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: 100px;
         }
 
-        .resume-layout {
+        .proof-header {
             display: grid;
             grid-template-columns: .7fr 1.3fr;
             gap: 80px;
-            padding-top: 40px;
+            padding-top: 80px;
+            margin-bottom: 70px;
+        }
+
+        .proof-title {
+            font-family: Georgia, serif;
+            font-size: clamp(3.5rem, 7vw, 7rem);
+            font-weight: 400;
+            line-height: .9;
+        }
+
+        .proof-title span {
+            color: var(--orange);
+        }
+
+        .proof-intro {
+            max-width: 560px;
+            align-self: end;
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        .certificates-label {
+            display: flex;
             align-items: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .certificates-label::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: var(--line);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .certificate-card {
+            border: 1px solid var(--line);
+            padding: 35px;
+            min-height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #eeeae1;
+            transition: .3s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--ink);
+        }
+
+        .certificate-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .certificate-number {
+            color: var(--orange);
+            font-size: .65rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .certificate-year {
+            color: var(--muted);
+            font-size: .65rem;
+        }
+
+        .certificate-card h3 {
+            font-family: Georgia, serif;
+            font-size: clamp(1.8rem, 3vw, 2.7rem);
+            font-weight: 400;
+            line-height: 1;
+            margin: 35px 0 12px;
+        }
+
+        .certificate-card p {
+            color: var(--muted);
+            font-size: .72rem;
+            line-height: 1.6;
+        }
+
+        .certificate-link {
+            display: inline-flex;
+            width: fit-content;
+            margin-top: 25px;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 6px;
+            font-size: .65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .certificate-link:hover {
+            color: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .resume-block {
+            margin-top: 70px;
+            padding-top: 70px;
+            border-top: 1px solid var(--ink);
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .resume-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--orange);
+            font-weight: 700;
         }
 
         .resume-title {
@@ -624,6 +748,7 @@
             font-size: clamp(3rem, 6vw, 6rem);
             font-weight: 400;
             line-height: .95;
+            margin-top: 15px;
         }
 
         .resume-title span {
@@ -631,7 +756,7 @@
         }
 
         .resume-content {
-            max-width: 520px;
+            max-width: 600px;
         }
 
         .resume-content p {
@@ -661,72 +786,6 @@
             color: var(--ink);
             border-color: var(--orange);
             transform: translateY(-3px);
-        }
-
-        .credentials {
-            background: var(--paper);
-        }
-
-        .credentials-layout {
-            display: grid;
-            grid-template-columns: .7fr 1.3fr;
-            gap: 80px;
-            padding-top: 80px;
-        }
-
-        .credentials-title {
-            font-family: Georgia, serif;
-            font-size: 4rem;
-            font-weight: 400;
-            line-height: .95;
-        }
-
-        .credentials-title span {
-            color: var(--blue);
-        }
-
-        .credential-list {
-            border-top: 1px solid var(--ink);
-        }
-
-        .credential {
-            display: grid;
-            grid-template-columns: 70px 1fr auto;
-            gap: 20px;
-            align-items: center;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--line);
-            transition: .3s;
-        }
-
-        .credential:hover {
-            padding-left: 12px;
-        }
-
-        .credential-number {
-            font-size: .65rem;
-            color: var(--orange);
-        }
-
-        .credential h3 {
-            font-family: Georgia, serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-        }
-
-        .credential h3 a:hover {
-            color: var(--orange);
-        }
-
-        .credential p {
-            color: var(--muted);
-            font-size: .7rem;
-            margin-top: 3px;
-        }
-
-        .credential-year {
-            color: var(--muted);
-            font-size: .65rem;
         }
 
         .journey {
@@ -895,8 +954,8 @@
 
             .about-layout,
             .toolbox-grid,
-            .credentials-layout,
-            .resume-layout,
+            .proof-header,
+            .resume-block,
             .journey-grid {
                 grid-template-columns: 1fr;
             }
@@ -931,10 +990,14 @@
                 margin-top: 30px;
             }
 
-            .credentials-layout,
-            .resume-layout,
+            .proof-header,
+            .resume-block,
             .journey-grid {
                 gap: 40px;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1014,10 +1077,14 @@
 
             .about-heading,
             .toolbox-title,
-            .credentials-title,
+            .proof-title,
             .resume-title,
             .journey-title {
                 font-size: 3.2rem;
+            }
+
+            .certificate-card {
+                padding: 25px;
             }
 
             .currently {
@@ -1109,10 +1176,6 @@
             </a>
 
             <a href="#resume">
-                Resume
-            </a>
-
-            <a href="#credentials">
                 Proof
             </a>
 
@@ -1588,7 +1651,7 @@
 
             </article>
 
-        <article class="project reverse reveal">
+            <article class="project reverse reveal">
 
                 <div class="project-visual">
 
@@ -1614,8 +1677,7 @@
                         Management
 
                     </h3>
-
-                    <p>
+                                        <p>
 
                         A terminal-based C application for adding, viewing,
                         searching and deleting hospital appointments, with
@@ -1728,22 +1790,127 @@
                 03
             </div>
 
-            <div class="resume-layout">
+            <div class="proof-header">
 
                 <div>
 
                     <span class="section-label">
+                        Proof of work
+                    </span>
+
+                    <h2 class="proof-title">
+                        Small<br>
+                        <span>milestones.</span>
+                    </h2>
+
+                </div>
+
+                <p class="proof-intro">
+                    A collection of certifications and work that show what
+                    I've been learning, practicing and building along the way.
+                </p>
+
+            </div>
+
+            <div class="certificates-label">
+                <span class="section-label">
+                    Certifications
+                </span>
+            </div>
+
+            <div class="certificates-grid">
+
+                <article class="certificate-card reveal">
+
+                    <div class="certificate-top">
+
+                        <span class="certificate-number">
+                            01
+                        </span>
+
+                        <span class="certificate-year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Problem Solving — Basic
+                        </h3>
+
+                        <p>
+                            HackerRank certification covering fundamental
+                            problem solving, data structures and algorithms.
+                        </p>
+
+                        <a
+                            href="https://www.hackerrank.com/certificates/iframe/4551da960c46"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="certificate-link">
+
+                            View certificate ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="certificate-card reveal">
+
+                    <div class="certificate-top">
+
+                        <span class="certificate-number">
+                            02
+                        </span>
+
+                        <span class="certificate-year">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Problem Solving — Intermediate
+                        </h3>
+
+                        <p>
+                            HackerRank certification demonstrating continued
+                            practice with problem solving and algorithms.
+                        </p>
+
+                        <a
+                            href="https://www.hackerrank.com/certificates/iframe/40b7b31b4435"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="certificate-link">
+
+                            View certificate ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="resume-block">
+
+                <div>
+
+                    <span class="resume-label">
                         My resume
                     </span>
 
                     <h2 class="resume-title">
-
                         The full<br>
-
-                        <span>
-                            picture.
-                        </span>
-
+                        <span>picture.</span>
                     </h2>
 
                 </div>
@@ -1751,10 +1918,8 @@
                 <div class="resume-content reveal">
 
                     <p>
-
-                        A concise overview of my education,
-                        technical skills, projects and certifications.
-
+                        A concise overview of my education, technical skills,
+                        projects and certifications — all in one place.
                     </p>
 
                     <a
@@ -1766,124 +1931,6 @@
                         Open resume ↗
 
                     </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="credentials" id="credentials">
-
-            <div class="section-number">
-                04
-            </div>
-
-            <div class="credentials-layout">
-
-                <div>
-
-                    <span class="section-label">
-                        Proof of work
-                    </span>
-
-                    <h2 class="credentials-title">
-
-                        Small<br>
-
-                        <span>
-                            milestones.
-                        </span>
-
-                    </h2>
-
-                </div>
-
-                <div class="credential-list">
-
-                    <div class="credential reveal">
-
-                        <span class="credential-number">
-                            01
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                <a
-                                    href="https://www.hackerrank.com/certificates/4551da960c46"
-                                    target="_blank">
-
-                                    Problem Solving — Basic ↗
-
-                                </a>
-                            </h3>
-
-                            <p>
-                                HackerRank certification
-                            </p>
-
-                        </div>
-
-                        <span class="credential-year">
-                            2026
-                        </span>
-
-                    </div>
-
-                    <div class="credential reveal">
-
-                        <span class="credential-number">
-                            02
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                <a
-                                    href="https://www.hackerrank.com/certificates/iframe/40b7b31b4435"
-                                    target="_blank">
-
-                                    Problem Solving — Intermediate ↗
-
-                                </a>
-                            </h3>
-
-                            <p>
-                                HackerRank certification
-                            </p>
-
-                        </div>
-
-                        <span class="credential-year">
-                            2026
-                        </span>
-
-                    </div>
-
-                    <div class="credential reveal">
-
-                        <span class="credential-number">
-                            03
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                More to come.
-                            </h3>
-
-                            <p>
-                                This list is still being written.
-                            </p>
-
-                        </div>
-
-                        <span class="credential-year">
-                            ...
-                        </span>
-
-                    </div>
 
                 </div>
 
